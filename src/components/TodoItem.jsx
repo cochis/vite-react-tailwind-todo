@@ -1,13 +1,13 @@
 import React from 'react'
 import IconCross from './icons/IconCross';
 import IconCheck from './icons/IconCheck';
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
-
-const TodoItem = ({ todo, removeTodo, updateTodo }) => {
+const TodoItem = React.forwardRef(({ todo, removeTodo, updateTodo, ...props }, ref) => {
     const { id, title, complete } = todo;
     // const handleToggleComplete = () => {
     return (
-        <article className="flex gap-4  border-b-gray-400 border-b dark:bg-gray-800">
+        <article {...props} ref={ref} className="flex gap-4  border-b-gray-400 border-b dark:bg-gray-800">
             {/* <button className=" flex-none rounded-full border-2 h-5 w-5 inline-block "></button> */}
             <button className={` flex-none rounded-full border-2 h-5 w-5 ${complete ? ' bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center' : ' inline-block'} `}
                 onClick={() => updateTodo(id)}
@@ -23,7 +23,7 @@ const TodoItem = ({ todo, removeTodo, updateTodo }) => {
             </button>
         </article>
     )
-}
+})
 
 
 
