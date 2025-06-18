@@ -1,9 +1,9 @@
-const MoonIcon = ({ fill = "#fff", ...props }) => {
+const IconMoon = ({ fill = "#fff", ...props }) => {
     return (
         <svg
             {...props}
-            xmlns="http://www.w3.org/2000/svg"
             fill={fill}
+            xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
         >
@@ -14,4 +14,4 @@ const MoonIcon = ({ fill = "#fff", ...props }) => {
         </svg>
     );
 };
-export default MoonIcon;
+export default IconMoon;
